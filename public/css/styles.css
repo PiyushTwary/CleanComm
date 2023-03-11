@@ -1,0 +1,44 @@
+html {
+  background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(65deg, #C9F4AA 50%, #E4E9FD 50%);
+  min-height: 1000px;
+  font-family: 'helvetica neue';
+}
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+h1{
+  color: #609966;
+}
+.footer{
+    text-align: center;
+}
+img{
+  height: 250px;
+  width: 250px;
+}
+hr{
+  height: 1;
+  color: black;
+  background: black;
+}
+.center {
+    padding-top: 20px;
+    text-align: center;
+}
+.form{
+  padding-top: 40px;
+  padding-bottom: 200px;
+}

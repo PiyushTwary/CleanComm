@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/requests"> Requests <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donate">Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donInfo">Donations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron centered">
+ <h1 class="display-3">Thanks for Your Cooperation</h1>
+ <h2>We will take it from here.</h2>
+ <p class="lead">Although if you want to help further, you can make donations to us which will be used to set up bins and hire professional help to clean the hotspot.</p>
+  <a class="btn btn-light btn-lg" href="/donate" role="button">Donate</a>
+</div>
+<%- include('partials/footer') %>

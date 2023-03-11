@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">CleanComm</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/requests"> Requests <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donate">Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donInfo">Donations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/suggestion">Suggestion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron center">
+  <div class="container">
+    <i class="fas fa-recycle fa-10x"></i>
+    <h1 class="display-3">CleanComm</h1>
+    <p class="lead">Help Clean your Colony and keep your surrounding clean</p>
+    <hr>
+    <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
+    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

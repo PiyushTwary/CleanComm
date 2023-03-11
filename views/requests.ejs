@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/requests"> Requests <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donate">Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donInfo">Donations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h1>Pending Requests</h1>
+<hr>
+<div>
+  <% items.forEach(function(image) { %>
+  <div class="center">
+    <div>
+      <img src="data:image/<%=image.img.contentType%>;base64,
+        <%=image.img.data.toString('base64')%>">
+      <div>
+        <h5><%= image.address%></h5>
+        <p><%= image.contact %></p>
+
+        <hr>
+
+
+
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') %>

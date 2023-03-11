@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/requests"> Requests <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donate">Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donInfo">Donations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Suggestion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron center">
+  <div class="container">
+    <i class="fas fa-camera fa-10x"></i>
+    <h1 class="display-3">CleanComm</h1>
+    <p class="lead">Just upload the picture of the hotspot and leave the rest to us</p>
+    <hr>
+    <a class="btn btn-light btn-lg" href="/imagesPage" role="button">  <i class="fas fa-camera"></i> Submit Images</a>
+  </div>
+</div>
+<div class="jumbotron centered">
+     <a class="btn btn-light btn-lg" href="/contact" role="button">  <i class="fa fa-phone"></i> Contact Us</a>
+     <a class="btn btn-light btn-lg" href="/about" role="button">  <i class="fa fa-info-circle"></i> About Us</a>
+</div>
+
+<%- include('partials/footer') %>
