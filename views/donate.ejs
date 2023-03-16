@@ -33,36 +33,16 @@
   <div class="card">
     <div class="card-body">
       <form action="/donate" method="post">
-          <input class="form-control" type="text" name="name" placeholder="Name" required>
-          <input class="form-control" type="email" name="email" placeholder="email" required>
-          <input class="form-control" type="text" name="address" placeholder="Address" required>
+          <input class="form-control" type="text" name="name" placeholder="name" required>
+          <input class="form-control" type="email" name="email" placeholder="email" required />
+          <input class="form-control" type="text" name="address" placeholder="address" required>
           <div class="center">
-            <button class="btn btn-light btn-lg lone" id="rzp-button1" type="submit">Proceed to Pay</button>
+            <button class="btn btn-outline-success" href="/payment" type="submit">Proceed to Pay</button>
           </div>
       </form>
     </div>
   </div>
 </div>
 <hr>
-<script>
-    axios.post("/order").then((info) => {
-      console.log(info)
-      var options = {
-        "key": "rzp_test_Sq8gb0TuOhk10L",
-        "name": "CleanComm",
-        "description": "Test Transaction",
-        "order_id": info.data.id,
-        "callback_url":"/thanks" ,
-        "theme": {
-          "color": "#3399cc"
-        }
-      };
-      var rzp1 = new Razorpay(options);
-      document.getElementById('rzp-button1').onclick = function(e) {
-        rzp1.open();
-        e.preventDefault();
-      }
-    })
-  </script>
 </body>
 </html>

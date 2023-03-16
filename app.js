@@ -40,8 +40,8 @@ const Coordinate = Locate.model("Coordinate", mongoose.Schema({
 }));
 const Donation = Donate.model("Donation", mongoose.Schema({
   name: String,
-  amount: Number,
   email: String,
+  amount: Number,
   address: String
 }));
 
@@ -98,7 +98,6 @@ app.post("/imagesPage", upload.single("image"), (req, res, next) => {
 });
 
 app.get("/givelocation", function(req, res) {
-  console.log("location");
   res.render("givelocation");
 });
 
@@ -118,7 +117,6 @@ app.post("/givelocation", function(req, res) {
 });
 
 app.get("/suggestion", function(req, res){
-  console.log("suggestion");
   res.render("suggestion");
 });
 
@@ -139,15 +137,12 @@ newSuggestion.save(function(err){
 
 
 app.get("/about", function(req, res) {
-  console.log("about");
   res.render("about");
 });
 app.get("/contact", function(req, res) {
-  console.log("contact");
   res.render("contact");
 });
 app.get("/register", function(req, res) {
-  console.log("reg");
   res.render("register");
 });
 
@@ -167,7 +162,6 @@ app.post("/register", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
-  console.log("login");
   res.render("login");
 });
 
@@ -193,37 +187,62 @@ app.post("/login", function(req, res) {
 });
 
 app.get("/", function(req, res) {
-  console.log("front");
   res.render("welcome");
 });
 
-app.get("/donate", function(req, res) {
-  console.log("donate");
-  res.render("donate");
+app.get("/payment", function(req, res) {
+  res.render("payment");
 });
 
-app.post("/donate", function(req, res) {
+app.post("/payment", function(req, res) {
+  let options = {
+    amount: 300*100,
+    currency: "INR",
+  };
+  razorpay.orders.create(options, function(err, order){
+    res.json(order)
+  })
+});
+
+app.get("/donate", function(req, res){
+  res.render("donate")
+});
+
+app.post("/donate", function(req, res){
   const newDonation = new Donation({
     name: req.body.name,
     email: req.body.email,
+    address: req.body.address,
     amount: 300,
-    address: req.body.contact
   });
-  newDonation.save();
+  newDonation.save(function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Inserted Succesfully");
+      res.redirect("/payment");
+    }
+  });
 });
 
 app.get("/donInfo", function(req, res) {
-  console.log("donInfo");
-  res.render("donInfo");
+  Donation.find({}, (err, items) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("An error occurred", err);
+    } else {
+      res.render("donInfo", {
+        items: items
+      });
+    }
+  });
 });
 
 app.get("/about", function(req, res) {
-  console.log("about");
   res.render("about");
 });
 
 app.get("/thanks", function(req, res) {
-  console.log("thanks");
   res.render("thanks");
 });
 
@@ -240,15 +259,12 @@ app.get("/requests", (req, res) => {
   });
 });
 
-app.post("/order", (req, res) =>{
-  let options = {
-    amount: 300*100,
-    currency: "INR",
-  };
-  razorpay.orders.create(options, function(err, order){
-    console.log(order);
-    res.json(order)
-  })
+app.get("/thankyou", function(req, res){
+  res.render("thank");
+});
+
+app.post("/thankyou", function(req, res){
+  res.render("thank");
 });
 
 app.listen(3000, function() {

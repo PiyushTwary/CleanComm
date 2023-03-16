@@ -1,5 +1,5 @@
 <%- include('partials/header') %>
-<div class="jumbotron centered">
+<div class="jumbotron center">
   <i class="fas fa-location-arrow fa-10x"></i>
   <hr>
   <h1></h1>
@@ -8,11 +8,11 @@
   <form action="/givelocation" method="POST">
     <div class="form-group">
       <label>Enter Coords from above</label>
-      <input type="text" class="form-control" name="coord" required>
+      <input type="text" class="form-control" name="coord" autocomplete="off" required>
       <label>Enter Contact Information</label>
-      <input type="text" class="form-control" name="contact" required>
+      <input type="text" class="form-control" name="contact" autocomplete="off" required>
     </div>
-    <button class="btn btn-light btn-lg lone" type="submit">Give Location</button>
+    <button class="btn btn-outline-success" type="submit">Give Location</button>
   </form>
 </div>
 <%- include('partials/footer') %>
