@@ -16,25 +16,24 @@
       <li class="nav-item">
         <a class="nav-link" href="/donInfo">Donations</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/suggestion">Suggestion</a>
-      </li>
     </ul>
   </div>
 </nav>
 
-<div class="jumbotron center">
+<h1>Drop your Suggestions here</h1>
+<hr>
+<div  class="jumbotron center">
+<form class="" action="/suggestion" method="post">
   <div class="container">
-    <i class="fas fa-camera fa-10x"></i>
-    <h1 class="display-3">CleanComm</h1>
-    <p class="lead">Just upload the picture of the hotspot and leave the rest to us</p>
-    <hr>
-    <a class="btn btn-light btn-lg" href="/imagesPage" role="button">  <i class="fas fa-camera"></i> Submit Images</a>
+    <label for="text">E-mail: </label>
+    <input type="email" id="email" placeholder="email" value="" name="email" required>
   </div>
-</div>
-<div class="jumbotron centered">
-     <a class="btn btn-light btn-lg" href="/contact" role="button">  <i class="fa fa-phone"></i> Contact Us</a>
-     <a class="btn btn-light btn-lg" href="/about" role="button">  <i class="fa fa-info-circle"></i> About Us</a>
+  <div>
+    <label for="text">Suggestion: </label>
+    <textarea type="text" id="suggestion" name="suggestion" rows="1" cols="25" required></textarea>
+  </div>
+    <button class="btn btn-light btn-lg lone" type="submit">Submit</button>
+</form>
 </div>
 
 <%- include('partials/footer') %>
