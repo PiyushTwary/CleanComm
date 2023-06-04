@@ -18,5 +18,14 @@
     "nodemon": "^2.0.21",
     "passport": "^0.6.0",
     "razorpay": "^2.8.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PiyushTwary/CleanComm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PiyushTwary/CleanComm/issues"
+  },
+  "homepage": "https://github.com/PiyushTwary/CleanComm#readme"
 }

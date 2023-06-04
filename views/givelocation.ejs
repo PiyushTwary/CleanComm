@@ -20,11 +20,8 @@
   const getlocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position);
         const lat = position.coords.latitude;
         const long = position.coords.longitude;
-        console.log(lat);
-        console.log(long);
         const des = document.querySelector("h1");
         des.innerHTML = lat + "," + long;
       });

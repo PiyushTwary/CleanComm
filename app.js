@@ -23,35 +23,30 @@ const razorpay = new Razorpay({
   key_secret:"ac8L6eJwJGNeEBATDuiTBBgJ",
 })
 
-const UserDb = mongoose.createConnection("mongodb+srv://" + process.env.USER_NAME + ":" + process.env.PASSWORD + "@cluster0.uuy6sis.mongodb.net/UserInfo");
-const Locate = mongoose.createConnection("mongodb+srv://" + process.env.USER_NAME + ":" + process.env.PASSWORD + "@cluster0.uuy6sis.mongodb.net/Location");
-const Donate = mongoose.createConnection("mongodb+srv://" + process.env.USER_NAME + ":" + process.env.PASSWORD + "@cluster0.uuy6sis.mongodb.net/Donate");
-const Suggestions = mongoose.createConnection("mongodb+srv://" + process.env.USER_NAME + ":" + process.env.PASSWORD + "@cluster0.uuy6sis.mongodb.net/Suggestions");
+const CleanComm = mongoose.createConnection("mongodb+srv://" + process.env.USER_NAME + ":" + process.env.PASSWORD + "@cluster0.uuy6sis.mongodb.net/CleanComm");
 
 
-const User = UserDb.model("User", mongoose.Schema({
+const User = CleanComm.model("User", mongoose.Schema({
   username: String,
   password: String
 }));
 
-const Coordinate = Locate.model("Coordinate", mongoose.Schema({
+const Coordinate = CleanComm.model("Coordinate", mongoose.Schema({
   coord: String,
   contact: String
 }));
-const Donation = Donate.model("Donation", mongoose.Schema({
+const Donation = CleanComm.model("Donation", mongoose.Schema({
   name: String,
   email: String,
   amount: Number,
   address: String
 }));
 
-const Suggestion = Suggestions.model("Suggestion", mongoose.Schema({
+const Suggestion = CleanComm.model("Suggestion", mongoose.Schema({
   email: String,
   suggestion: String
 }));
-
-const Photo = mongoose.createConnection("mongodb+srv://" + process.env.USER_NAME + ":" + process.env.PASSWORD + "@cluster0.uuy6sis.mongodb.net/Photo");
-const Image = Photo.model("Image", mongoose.Schema({
+const Image = CleanComm.model("Image", mongoose.Schema({
   address: String,
   contact: String,
   img: {
